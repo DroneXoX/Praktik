@@ -1,0 +1,2 @@
+class Praktikanter < ApplicationRecord
+end

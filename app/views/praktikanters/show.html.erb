@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @praktikanter %>
+
+<div>
+  <%= link_to "Redigera", edit_praktikanter_path(@praktikanter), class:"btn btn-secondary" %>
+  <%= link_to "Tillbaka", praktikanters_path, class:"btn btn-secondary" %>
+
+  <%= button_to "Ta bort", @praktikanter, method: :delete %>
+</div>

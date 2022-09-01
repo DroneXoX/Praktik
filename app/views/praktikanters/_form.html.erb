@@ -1,0 +1,51 @@
+<%= form_with(model: praktikanter) do |form| %>
+  <% if praktikanter.errors.any? %>
+    <div style="color: red">
+      
+<table class="table table-striped table-dark">
+ <thead class="thead-dark"> 
+<tr>
+  <th>Förnamn</th>
+  <th>Efternamn</th>
+  <th>Email</th>
+  <th>Telefon</th>
+  <th>LinkedIn</th>
+      <h2><%= pluralize(praktikanter.errors.count, "error") %> prohibited this praktikanter from being saved:</h2>
+
+      <ul>
+        <% praktikanter.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :first_förnamn, style: "display: block" %>
+    <%= form.text_field :first_förnamn %>
+  </div>
+
+  <div>
+    <%= form.label :efternamn, style: "display: block" %>
+    <%= form.text_field :efternamn %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.label :telefon, style: "display: block" %>
+    <%= form.text_field :telefon %>
+  </div>
+
+  <div>
+    <%= form.label :linkedin, style: "display: block" %>
+    <%= form.text_field :linkedin %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
