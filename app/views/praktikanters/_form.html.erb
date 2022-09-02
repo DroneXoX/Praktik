@@ -1,15 +1,6 @@
 <%= form_with(model: praktikanter) do |form| %>
   <% if praktikanter.errors.any? %>
     <div style="color: red">
-      
-<table class="table table-striped table-dark">
- <thead class="thead-dark"> 
-<tr>
-  <th>Förnamn</th>
-  <th>Efternamn</th>
-  <th>Email</th>
-  <th>Telefon</th>
-  <th>LinkedIn</th>
       <h2><%= pluralize(praktikanter.errors.count, "error") %> prohibited this praktikanter from being saved:</h2>
 
       <ul>
@@ -21,31 +12,32 @@
   <% end %>
 
   <div>
-    <%= form.label :first_förnamn, style: "display: block" %>
-    <%= form.text_field :first_förnamn %>
+    <%= form.label :förnamn, style: "display: block" %>
+    <%= form.text_field :first_förnamn, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :efternamn, style: "display: block" %>
-    <%= form.text_field :efternamn %>
+    <%= form.text_field :efternamn, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+    <%= form.text_field :email, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :telefon, style: "display: block" %>
-    <%= form.text_field :telefon %>
+    <%= form.text_field :telefon, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :linkedin, style: "display: block" %>
-    <%= form.text_field :linkedin %>
+    <%= form.text_field :linkedin, class: "form-control" %>
   </div>
 
+<br>
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-secondary" %>
   </div>
 <% end %>

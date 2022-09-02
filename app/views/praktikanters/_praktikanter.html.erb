@@ -1,27 +1,10 @@
 <div id="<%= dom_id praktikanter %>">
-  <p>
-    <strong>Förnamn:</strong>
-    <%= praktikanter.first_förnamn %>
-  </p>
-
-  <p>
-    <strong>Efternamn:</strong>
-    <%= praktikanter.efternamn %>
-  </p>
-
-  <p>
-    <strong>Email:</strong>
-    <%= praktikanter.email %>
-  </p>
-
-  <p>
-    <strong>Telefon:</strong>
-    <%= praktikanter.telefon %>
-  </p>
-
-  <p>
-    <strong>Linkedin:</strong>
-    <%= praktikanter.linkedin %>
-  </p>
-
-</div>
+  <tbody>
+    <tr>
+    <td><%= praktikanter.first_förnamn %></td>
+    <td><%= praktikanter.efternamn %></td>
+    <td><%= praktikanter.email %></td>
+    <td><%= praktikanter.telefon %> </td>
+    <td><%= praktikanter.linkedin %></td>
+    <td><%= link_to "Visa", praktikanter %></td>
+   </tr>

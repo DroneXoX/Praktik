@@ -8,27 +8,47 @@
     <ul class="navbar-nav mr-auto">
     	<%= link_to 'Hem', root_path, class:"nav-link"%>
       </li>
-      <li class="nav-item">
-      	<%= link_to 'Om oss', home_about_path, class: 'nav-link' %>
+
+    <% if user_signed_in? %>
+       <li class="nav-item">
+      	<%= link_to 'Logga ut', destroy_user_session_path, method: :delete, class: 'nav-link' %>
       </li>
+      <li class="nav-item">
+      	<%= link_to 'Redigera profil', edit_user_registration_path, class: 'nav-link' %>
+      </li>
+
+    <% else %>
+      <li class="nav-item">
+      	<%= link_to 'Logga in', new_user_session_path, class: 'nav-link' %>
+      </li>
+     
+      <li class="nav-item">
+      	<%= link_to 'Registrera', new_user_registration_path, class: 'nav-link' %>
+      </li>
+    <% end %>
+      
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-          Våra Produkter
+          Våra Projekt
         </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Produkt 1</a>
-          <a class="dropdown-item" href="#">Produkt 2</a>
-          <a class="dropdown-item" href="#">Produkt 3</a>
+          <a class="dropdown-item" href="#">Projekt 1</a>
+          <a class="dropdown-item" href="#">Projekt 2</a>
+          <a class="dropdown-item" href="#">Projekt 3</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Kommande produkt</a>
+          <a class="dropdown-item" href="#">Pågående projekt</a>
         </div>
       </li>
       <li class="nav-item">
-      	<%= link_to 'Kontakt', praktikanters_path, class: 'nav-link'%>
-              </li>
+      	<%= link_to 'Praktikanter', praktikanters_path, class: 'nav-link'%>
+         </li>
+
+         <li class="nav-item">
+      	<%= link_to 'Om oss', home_about_path, class: 'nav-link' %>
+      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search" placeholder="Sök" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sök</button>
     </form>
   </div>

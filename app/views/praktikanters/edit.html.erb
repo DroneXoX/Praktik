@@ -2,9 +2,10 @@
 
 <%= render "form", praktikanter: @praktikanter %>
 
-<br>
 
 <div>
-  <%= link_to "Visa", @praktikanter %> |
-  <%= link_to "Tillbaka", praktikanters_path %>
+<%= button_to "Ta bort", @praktikanter, method: :delete, class: 'btn btn-danger', data: { confirm: "Är du säker?" } %>
+ <br>
+  <%= link_to "Tillbaka", praktikanters_path, class: 'btn btn-secondary' %>
+  
 </div>
