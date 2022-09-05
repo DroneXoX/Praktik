@@ -36,6 +36,11 @@
     <%= form.text_field :linkedin, class: "form-control" %>
   </div>
 
+  <div>
+    
+    <%= form.number_field :ID, id: :praktikant_id, class: "form-control", value: current_user.id, type: :hidden %>
+  </div>
+
 <br>
   <div>
     <%= form.submit class: "btn btn-secondary" %>

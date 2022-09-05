@@ -29,6 +29,8 @@ gem "jbuilder"
 
 gem 'devise', '~> 4.8', '>= 4.8.1'
 
+gem 'jquery-rails'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -40,6 +42,8 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data"
+
+gem "js_info"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false

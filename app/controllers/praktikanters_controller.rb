@@ -1,5 +1,6 @@
 class PraktikantersController < ApplicationController
   before_action :set_praktikanter, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index,]
 
   # GET /praktikanters or /praktikanters.json
   def index
