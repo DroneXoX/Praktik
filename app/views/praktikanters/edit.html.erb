@@ -1,0 +1,11 @@
+<h1>Redigera praktikant</h1>
+
+<%= render "form", praktikanter: @praktikanter %>
+
+
+<div>
+<%= button_to "Ta bort", @praktikanter, method: :delete, class: 'btn btn-danger', data: { confirm: "Är du säker?" } %>
+ <br>
+  <%= link_to "Tillbaka", praktikanters_path, class: 'btn btn-secondary' %>
+  
+</div>

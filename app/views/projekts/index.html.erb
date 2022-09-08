@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Projekt</h1>
+
+<div id="projekts">
+<table class="table table-secondary table-bordered border-dark table-hover">
+<br>
+    <thead>
+      <tr>
+        <th scope="col">Namn</th>
+        <th scope="col">Beskrivning</th>
+        <th scope="col">Ägare</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+  <% @projekts.each do |projekt| %>
+    <%= render projekt %>
+
+  <% end %>
+</div>
+
+<%= link_to "New projekt", new_projekt_path, class:"btn btn-secondary" %>

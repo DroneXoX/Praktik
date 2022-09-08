@@ -1,0 +1,45 @@
+<%= form_with(model: projekt) do |form| %>
+  <% if projekt.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(projekt.errors.count, "error") %> prohibited this projekt from being saved:</h2>
+
+      <ul>
+        <% projekt.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :namn, style: "display: block" %>
+    <%= form.text_field :namn, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :beskrivning, style: "display: block" %>
+    <%= form.text_area :beskrivning, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :projektägare, style: "display: block" %>
+    <%= form.text_field :ägare, class: "form-control" %>
+  </div>
+
+<br/>
+
+  <div>
+    <select class="form-select" aria-label="Status">
+  <option selected>Välj status</option>
+  <option value="1">Startad</option>
+  <option value="2">Påbörjad</option>
+  <option value="3">Avslutad</option>
+</select>
+  </div>
+  
+  <br/>
+
+  <div>
+    <%= form.submit :"Skapa projekt", class: "btn btn-secondary" %>
+  </div>
+<% end %>

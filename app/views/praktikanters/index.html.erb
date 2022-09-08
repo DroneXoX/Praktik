@@ -1,0 +1,19 @@
+<h1>Praktikanter</h1>
+<div id="praktikanters">
+  <table class="table table-secondary table-bordered border-dark table-hover">
+  <br>
+    <thead>
+      <tr>
+        <th scope="col">Förnamn</th>
+        <th scope="col">Efternamn</th>
+        <th scope="col">Email</th>
+        <th scope="col">Telefon</th>
+        <th scope="col">LinkedIn</th>
+      </tr>
+    </thead>
+    <% @praktikanters.each do |praktikanter| %>
+      <%= render praktikanter %>
+    <% end %>
+  </table>
+</div>
+<%= link_to "Ny praktikant", new_praktikanter_path, class:"btn btn-secondary" %>

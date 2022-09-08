@@ -1,0 +1,44 @@
+<div class="card">
+  <h5 class="card-header"> Profil <% resource_name.to_s.humanize %></h5>
+
+<div class="card-body"> <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field form-group">
+    <%= f.label :Mailadress %><br />
+    <%= f.email_field :email, class: "form-control", autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :Nytt_lösenord %> <i>(Lämna blankt om du inte vill ändra lösenord)</i><br />
+    <%= f.password_field :password, class: "form-control", placeholder: "Minst 6 tecken", autocomplete: "new-password" %>
+    <% if @minimum_password_length %>
+    
+    <% end %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :bekräfta_lösenord %><br />
+    <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.label :nuvarande_lösenord %> <br />
+    <%= f.password_field :current_password, class: "form-control", autocomplete: "current-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Uppdatera" %>
+  </div>
+<% end %>
+
+<br>
+
+
+<p><%= button_to "Radera konto", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+
+<%= link_to "Tillbaka", :back %>

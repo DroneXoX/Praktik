@@ -1,0 +1,48 @@
+<%= form_with(model: praktikanter) do |form| %>
+  <% if praktikanter.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(praktikanter.errors.count, "error") %> prohibited this praktikanter from being saved:</h2>
+
+      <ul>
+        <% praktikanter.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :förnamn, style: "display: block" %>
+    <%= form.text_field :first_förnamn, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :efternamn, style: "display: block" %>
+    <%= form.text_field :efternamn, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :telefon, style: "display: block" %>
+    <%= form.text_field :telefon, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :linkedin, style: "display: block" %>
+    <%= form.text_field :linkedin, class: "form-control" %>
+  </div>
+
+  <div>
+    
+    <%= form.number_field :ID, id: :praktikant_id, class: "form-control", value: current_user.id, type: :hidden %>
+  </div>
+
+<br>
+  <div>
+    <%= form.submit class: "btn btn-secondary" %>
+  </div>
+<% end %>

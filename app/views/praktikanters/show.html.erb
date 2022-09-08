@@ -1,0 +1,17 @@
+<div class="card text-center">
+  <div class="card-header">
+PRAKTIKANT
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"><%= @praktikanter.first_förnamn %>
+    <%= @praktikanter.efternamn %></h5>
+    <p class="card-text"><%= @praktikanter.email %> </p>
+      <p class="card-text"><%= @praktikanter.telefon %> </p>
+    <%= link_to 'LinkedIn', @praktikanter.linkedin, class:, class: "btn btn-primary" %>
+  </div>
+  <div class="card-footer text-muted">
+     <%= link_to "Redigera", edit_praktikanter_path(@praktikanter), class:"btn btn-secondary" %>
+  <%= link_to "Tillbaka", praktikanters_path, class:"btn btn-secondary" %>
+  </div>
+</div>
+ <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="rounded float-start" alt="...">
